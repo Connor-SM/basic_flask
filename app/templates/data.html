@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% for k, v in person.items() %}
+    {% if k == 'name' %}
+      <h1>{{ k }}: {{ v }}</h1>
+    {% elif (k == 'active') and (v == False) %}
+      <p>This person does not exercise.</p>
+    {% elif (k == 'active') and (v == True) %}
+      <p>This person exercises often.</p>
+    {% else %}
+      <h3>{{ k }}: {{ v }}</h3>
+    {% endif %}
+  {% endfor %}
+{% endblock %}
